@@ -49,7 +49,11 @@ const right = document.querySelector('.right');
 right.addEventListener('click',
     function(){
         hidden[visibile].classList.remove('show')
-        visibile++;
+        if(visibile == images.length - 1){
+            visibile = 0;
+        } else{
+            visibile++;
+        }
         hidden[visibile].classList.add('show')
     }
 );
@@ -60,7 +64,11 @@ left.addEventListener('click',
     function(){
 
         hidden[visibile].classList.remove('show')
-        visibile--;
+        if(visibile == 0){
+            visibile = images.length - 1;
+        } else{
+            visibile--;
+        }
         hidden[visibile].classList.add('show')
     }
 );
