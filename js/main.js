@@ -27,3 +27,37 @@ const images = [
         description: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam.'
     },
 ];
+
+const containerImg = document.querySelector('.container-img');
+
+images.forEach(img => {
+    console.log(img['url']);
+    containerImg.innerHTML += `<div class="item"><img src="${img['url']}" /></div>`
+});
+
+let visibile = 0;
+
+const item = document.getElementsByClassName('item');
+
+item[visibile].classList.add('show');
+
+const right = document.querySelector('.right');
+
+right.addEventListener('click',
+    function(){
+        item[visibile].classList.remove('show')
+        visibile++;
+        item[visibile].classList.add('show')
+    }
+);
+
+const left = document.querySelector('.left');
+
+left.addEventListener('click',
+    function(){
+
+        item[visibile].classList.remove('show')
+        visibile--;
+        item[visibile].classList.add('show')
+    }
+);
