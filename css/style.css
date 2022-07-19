@@ -1,0 +1,47 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container{
+    max-width: 1070px;
+    min-width: 300px;
+    margin: 0 auto;
+}
+
+.container-carousel{
+    margin-top: 100px;
+    position: relative;
+}
+
+.container-carousel img{
+    height: 100%;
+    width: 100%;
+}
+
+.thumbnails{
+    display: flex;
+    width: calc(100% / 5);
+}
+
+.right{
+    right: 10px;
+}
+
+.left{
+    left: 40px;
+}
+
+.right, .left{
+    bottom: 55px;
+    position: absolute;
+    transform: translateX(-50%);
+    background-color: rgba(255, 255, 255, 0.733);
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    line-height: 30px;
+    text-align: center;
+    cursor: pointer;
+}
