@@ -21,8 +21,7 @@
     object-fit: cover;
 }
 
-.item{
-    height: 100%;
+.hidden{
     display: none;
 }
 
@@ -30,7 +29,7 @@
     display: block;
 }
 
-.title{
+.titolo{
     position: absolute;
     top: 20px;
     right: 25px;

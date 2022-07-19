@@ -30,24 +30,27 @@ const images = [
 
 const containerImg = document.querySelector('.container-img');
 
-images.forEach(img => {
-    console.log(img['url']);
-    containerImg.innerHTML += `<div class="item"><img src="${img['url']}" /></div>`
+images.forEach(sezioni => {
+    console.log(sezioni);
+    containerImg.innerHTML += `<div class="hidden"><img src="${sezioni['url']}" />
+                                <div class="titolo"><h2">${sezioni['title']}</h2><p>${sezioni['description']}</p></div>
+                                </div>`
+    
 });
 
 let visibile = 0;
 
-const item = document.getElementsByClassName('item');
+const hidden = document.querySelectorAll('.hidden');
 
-item[visibile].classList.add('show');
+hidden[visibile].classList.add('show');
 
 const right = document.querySelector('.right');
 
 right.addEventListener('click',
     function(){
-        item[visibile].classList.remove('show')
+        hidden[visibile].classList.remove('show')
         visibile++;
-        item[visibile].classList.add('show')
+        hidden[visibile].classList.add('show')
     }
 );
 
@@ -56,8 +59,8 @@ const left = document.querySelector('.left');
 left.addEventListener('click',
     function(){
 
-        item[visibile].classList.remove('show')
+        hidden[visibile].classList.remove('show')
         visibile--;
-        item[visibile].classList.add('show')
+        hidden[visibile].classList.add('show')
     }
 );
