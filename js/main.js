@@ -72,3 +72,40 @@ left.addEventListener('click',
         hidden[visibile].classList.add('show')
     }
 );
+
+let play = document.querySelector('.play');
+
+let pause = document.querySelector('.pause');
+
+let test = setInterval(next,3000);   
+
+let clock;
+
+function next() {
+    
+    hidden[visibile].classList.remove('show')
+    if(visibile == images.length - 1){
+        visibile = 0;
+    } else{
+        visibile++;
+    }
+    hidden[visibile].classList.add('show')
+};
+
+pause.addEventListener('click',
+    function(){
+        clearInterval(test);
+});
+
+play.addEventListener('click',
+    function next() { 
+            clock = setInterval(function() {
+            hidden[visibile].classList.remove('show')
+            if(visibile == images.length - 1){
+                visibile = 0;
+            } else{
+                visibile++;
+            }
+            hidden[visibile].classList.add('show')
+        },3000);
+});
