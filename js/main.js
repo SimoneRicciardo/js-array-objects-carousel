@@ -33,11 +33,13 @@ const containerImg = document.querySelector('.container-img');
 images.forEach(sezioni => {
     console.log(sezioni);
     containerImg.innerHTML += `<div class="hidden"><img src="${sezioni['url']}" />
-                                <div class="titolo"><h1">${sezioni['title']}</h1><p>${sezioni['description']}</p></div>
-                                </div>`
+    <div class="titolo"><h1">${sezioni['title']}</h1><p>${sezioni['description']}</p></div>
+    </div>`
     
 });
 
+
+//tasti next + prev
 let visibile = 0;
 
 const hidden = document.querySelectorAll('.hidden');
@@ -58,8 +60,7 @@ left.addEventListener('click', function(){
 );
 
 
-
-
+//autoplay + btn play, pause
 let play = document.querySelector('.play');
 
 let pause = document.querySelector('.pause');
@@ -83,7 +84,7 @@ function(){
 
 
 
-
+//function
 function next(){
     hidden[visibile].classList.remove('show')
     if(visibile == images.length - 1){
