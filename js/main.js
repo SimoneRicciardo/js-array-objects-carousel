@@ -45,44 +45,46 @@ const hidden = document.querySelectorAll('.hidden');
 hidden[visibile].classList.add('show');
 
 const right = document.querySelector('.right');
-
-right.addEventListener('click',
-    function(){
-        hidden[visibile].classList.remove('show')
-        if(visibile == images.length - 1){
-            visibile = 0;
-        } else{
-            visibile++;
-        }
-        hidden[visibile].classList.add('show')
-    }
-);
-
 const left = document.querySelector('.left');
 
-left.addEventListener('click',
-    function(){
-
-        hidden[visibile].classList.remove('show')
-        if(visibile == 0){
-            visibile = images.length - 1;
-        } else{
-            visibile--;
-        }
-        hidden[visibile].classList.add('show')
-    }
+right.addEventListener('click',function(){
+    next();
+}
 );
+
+left.addEventListener('click', function(){
+    prev();
+}
+);
+
+
+
 
 let play = document.querySelector('.play');
 
 let pause = document.querySelector('.pause');
 
-let test = setInterval(next,3000);   
+let clock = setInterval(next,3000);
 
-let clock;
 
-function next() {
-    
+play.addEventListener('click',
+function() { 
+    clock = setInterval(function() {
+        next();
+    },3000);
+});
+
+
+pause.addEventListener('click',
+function(){
+    clearInterval(clock);
+});
+
+
+
+
+
+function next(){
     hidden[visibile].classList.remove('show')
     if(visibile == images.length - 1){
         visibile = 0;
@@ -90,22 +92,15 @@ function next() {
         visibile++;
     }
     hidden[visibile].classList.add('show')
-};
+}
 
-pause.addEventListener('click',
-    function(){
-        clearInterval(test);
-});
+function prev(){
 
-play.addEventListener('click',
-    function next() { 
-            clock = setInterval(function() {
-            hidden[visibile].classList.remove('show')
-            if(visibile == images.length - 1){
-                visibile = 0;
-            } else{
-                visibile++;
-            }
-            hidden[visibile].classList.add('show')
-        },3000);
-});
+    hidden[visibile].classList.remove('show')
+    if(visibile == 0){
+        visibile = images.length - 1;
+    } else{
+        visibile--;
+    }
+    hidden[visibile].classList.add('show')
+}
