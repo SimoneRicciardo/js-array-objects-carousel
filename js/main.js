@@ -33,7 +33,7 @@ const containerImg = document.querySelector('.container-img');
 images.forEach(sezioni => {
     console.log(sezioni);
     containerImg.innerHTML += `<div class="hidden"><img src="${sezioni['url']}" />
-                                <div class="titolo"><h2">${sezioni['title']}</h2><p>${sezioni['description']}</p></div>
+                                <div class="titolo"><h1">${sezioni['title']}</h1><p>${sezioni['description']}</p></div>
                                 </div>`
     
 });
